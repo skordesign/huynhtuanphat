@@ -1,0 +1,491 @@
+
+$color-theme: rgba(#280b48, 1);
+
+header{
+	display: inline-flex;
+	position: fixed;
+	height: 60px;
+	background: $color-theme;
+	right: 0;
+	left: 0;
+	top: 0;
+	z-index: 10;
+	justify-content: space-between;
+	.button_menu{
+		height: 24px;
+		width: 24px;
+		min-width: 24px;
+		margin: 18px;
+		margin-right: 20px;
+		background: url(../assets/Menu-ffffff.svg) center center no-repeat;
+		@extend  %buttonstyle;
+	}
+	.searchborder{	
+		margin-left: 0px;
+		margin-right: 0px;  
+		min-width: 260px;
+		max-width: 330px;
+		width: 100%;
+		.search{
+			margin-top: 13px;
+			margin-bottom: 13px;
+			margin-left: 5px;
+			margin-right: 15px; 
+			min-width: 230px;
+			max-width: 300px;
+			width: auto;
+			display: flex;
+			flex-flow: row;
+			-webkit-flex-direction: row-reverse;
+			flex-direction: row-reverse;
+			border-color: #ffffff;
+			border-style: solid;
+			border-width: 1px;
+			border-radius: 15px;
+			background: transparent;
+			padding-right: 5px;
+			overflow: visible;
+			button{
+				height: 20px;
+				width: 20px;
+				margin: 5px;
+				background: url(../assets/Search-6b6b6b.svg) center center no-repeat;
+				@extend  %buttonstyle;
+			}
+			input[type="text"]{
+				padding-left: 10px;
+				background: transparent;
+				color: #ffffff;
+				outline: 0;
+				border: 0;
+				width: calc(100% - 34px);
+				&:focus
+				{
+					div{
+						display: block;
+					}
+				}
+			}
+		}
+	}
+}
+.results{
+	margin-left: 0px;
+	margin-right: 0px;  
+	min-width: 260px;
+	max-width: 330px;
+	width: 100%;
+	top: 60px;
+	right: 0;
+	position: absolute;
+	z-index: 12;
+	overflow: scroll;
+	display: flex;
+	flex-flow: column;
+	background-color: $color-theme;
+	box-shadow: 1px 1px 5px rgba(#000000, 0.4);
+	max-height: 400px;
+	border-radius: 0px 0px 5px 5px;
+	.result{
+		border-radius: 1px 1px 1px 1px;
+		min-height: 60px;
+		width: 100%;
+		display: inline-flex;
+		z-index: 12;
+		padding-left: 10px;
+		cursor: pointer;
+		.iconbl{
+			min-height: 20px; 
+			min-width: 20px; 
+			margin-top: 20px;
+			margin-left: 10px;
+			margin-right: 10px;
+			margin-bottom: 20px;
+			display: inline-block;
+		}
+		p{
+			color: #ffffff;
+			margin-top: 20px;
+			margin-left: 2px;
+			margin-right: 2px;
+			margin-bottom: 20px;
+			display: inline;
+			font-size: 14px;
+		}
+		&:hover{
+			p{
+				font-size: 16px;
+			}
+		}
+	}
+}
+::-webkit-input-placeholder {
+   color: #ffffff;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #ffffff; 
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #ffffff; 
+}
+
+:-ms-input-placeholder {  
+   color: #ffffff;
+}
+%buttonstyle{
+	outline: 0;
+	border: 0;
+}
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+footer{
+	display: inline-flex;
+	position: absolute;
+	overflow: hidden;
+	height: 100px;
+	right:0;
+	left:0;
+	bottom: 0;
+	background: white;
+	z-index: 10;
+	box-shadow: 1px 0px 5px rgba(#000000, 0.4);
+	min-width: 320px;
+	@media screen and (min-width: 400px){
+		justify-content: flex-end;
+		height: 50px;
+	}
+	.control{	
+		position: relative;
+		display: inline-flex;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		justify-content: space-between;
+		min-width: 320px;
+		width: 100%;
+		max-width: 400px;
+		@media screen and (min-width: 400px){
+			justify-content: flex-end;
+			height: 50px;
+			left: 0;
+			right: auto;
+			top: 0;
+			bottom: 0;
+		}
+		.button_play{
+			height: 50px;
+			width: 50px;
+			margin-top: 25px;
+			margin-bottom: 25px;
+			margin-left: 10px;
+			margin-right: 10px;
+			@media screen and (min-width: 400px){
+				height: 30px;
+				width: 30px;
+				margin: 10px;
+			}
+			background: url(../assets/Play-ffffff.svg) center center no-repeat;
+			@extend %buttonstyle;
+		}
+		.btn_previous{
+			height: 36px;
+			width: 36px;
+			margin-top: 32px;
+			margin-bottom: 32px;
+			@media screen and (min-width: 400px){
+				height: 30px;
+				width: 30px;
+				margin-top: 10px;
+				margin-bottom: 10px;
+				margin-left: 15px;
+				margin-right: 15px;
+			}
+			background: url(../assets/Previous-000000.svg) center center no-repeat;
+			@extend %buttonstyle;
+		}
+		.btn_next{
+			height: 36px;
+			width: 36px;
+			margin-top: 32px;
+			margin-bottom: 32px;
+			@media screen and (min-width: 400px){
+				height: 30px;
+				width: 30px;
+				margin-top: 10px;
+				margin-bottom: 10px;
+				margin-left: 15px;
+				margin-right: 15px;
+			}
+			background: url(../assets/Next-000000.svg) center center no-repeat;
+			@extend %buttonstyle;
+		}
+		.btn_shuffle{
+			display: none;
+			@media screen and (min-width: 400px){
+				height: 20px;
+				width: 20px;
+				margin-top: 15px;
+				margin-bottom: 15px;
+				margin-left: 30px;
+				margin-right: 30px;
+				display: block;
+			}
+			background: url(../assets/Shuffle-000000.svg) center center no-repeat;
+			@extend %buttonstyle;
+		}
+		.btn_shuffle2{
+			height: 20px;
+			width: 20px;
+			margin-top: 40px;
+			margin-bottom: 40px;
+			margin-left: 10px;
+			margin-right: 30px;
+			display: block;
+			@media screen and (min-width: 400px){
+				display: none;
+			}
+			background: url(../assets/Shuffle-000000.svg) center center no-repeat;
+			@extend %buttonstyle;
+		}
+		.btn_repeat{
+			height: 20px;
+			width: 20px;
+			margin-top: 40px;
+			margin-bottom: 40px;
+			margin-left: 30px;
+			margin-right: 10px;
+			@media screen and (min-width: 400px){
+				height: 20px;
+				width: 20px;
+				margin-top: 15px;
+				margin-bottom: 15px;
+				margin-left: 30px;
+				margin-right: 10px;
+			}
+			background: url(../assets/Repeat-000000.svg) center center no-repeat;
+			@extend %buttonstyle;
+		}
+	}
+	.progress{
+		background-color: $color-theme;
+		height: 1px;
+		position: absolute;
+		left: 0;
+	}
+	.title{
+		@media screen and (min-width: 800px){
+			height: 50px;
+			width: 50%;
+			max-width: 400px;
+			min-width: 300px;
+			color: black;
+		}
+		p{
+			height: 50px;
+			text-align: center;
+			padding-top: 15px;
+			color: black;
+		}
+	}
+}
+html{
+	-webkit-tap-highlight-color: rgba(0,0,0,0.1);
+	background: $color-theme;
+}
+.sidebar-menu{
+	display: block;
+	position: fixed;
+	width: 280px;
+	height: 100%;
+	-webkit-transform: translateX(-280px);
+	transform: translateX(-280px);
+	-webkit-transform-origin: 0% 50%;
+	transform-origin: 0% 50%;
+	top: 0;
+	bottom: 0;
+	background: #ffffff;
+	z-index: 11;
+	.menu-content{
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-flow: column;
+		.menu-header{
+			height: 200px;
+			width: auto;
+		}
+		.menu-body{
+			display: flex;
+			flex-flow: column;
+			width: 100%;
+			height: 100%;
+			padding-top: 20px;
+			button{
+				font-size: 14px;
+				margin: 10px;
+				padding-left: 60px;
+				text-align: left;
+				@extend %buttonstyle;
+				background-color: transparent;
+				color: #6b6b6b;
+			}
+			.setting{
+				background: url(../assets/Settings-ffffff.svg) 10px center no-repeat;
+			}
+			.favorites{
+				background: url(../assets/Favorites-ffffff.svg) 10px center no-repeat;
+			}
+			.feedback{
+				background: url(../assets/Feedback-ffffff.svg) 10px center no-repeat;
+			}
+		}
+	}
+
+}
+body{
+	#content{
+		z-index: 8;
+		display: block;
+		position: fixed;
+		left: 0;
+		right: 0;
+		top: 60px;
+		bottom:100px;
+		background-color: #ffffff;
+		@media screen and (min-width: 400px) {
+			bottom: 50px;
+		}
+		.main{
+			border-top: 0;
+			border-right:0;
+			border-left: 0;
+			border-bottom: 0;
+			border-color: #6b6b6b;
+			overflow-y: scroll;
+			display: block;
+			width: 100%;
+			position: relative; 
+			max-height: 100%;
+			@media screen and (min-width: 768px){
+				width: 50%;
+				max-width: 400px;
+				border-right:inset 1px;
+			}
+			.song{
+				border-color: #000000;
+				border-top: 0;
+				border-right:0;
+				border-left: 0;
+				border-bottom: inset 1px;
+				height: 60px;
+				padding: 5px;
+				padding-left: 10px;
+				color: #000000;
+				width: 100%;
+				min-width: 320px;
+				.namesong{
+					font-size: 14px;
+					display: inline;
+					color: #000000;
+				}
+				overflow-y: hidden;
+				background-color:#ffffff;
+				display: block;
+				z-index: 9;
+				cursor: pointer;
+				p{
+					font-size: 12px;
+					color: #6a6a6a;
+					overflow-y: hidden;
+				}
+				&:hover{
+					.namesong{
+						color: $color-theme;
+						font-size: 16px;
+					}
+					p{
+						color: $color-theme;
+						font-size: 14px;
+					}
+				}
+			}
+		}
+		.circle-progress{
+			position: absolute;
+			width: 50px;
+			height: 50px;
+			top: 50%;
+			margin-left: calc(50% - 25px);
+			background-color: transparent; 
+			display: block;
+			-webkit-animation: rotateZcircle 1.5s infinite;
+			animation: rotateZcircle 1.5s infinite;
+			.circle-1{
+				width: 100%;
+				height: 100%;
+				background: url(../assets/Circle-progress.svg) center center no-repeat;
+    			position: absolute;
+			}
+			.circle-2{
+				width: 100%;
+				height: 100%;
+				background: url(../assets/Circle-progress.svg) center center no-repeat;
+    			position: absolute;
+				-webkit-transform: rotateZ(120deg);
+			}
+			.circle-3{
+				width: 100%;
+				height: 100%;
+				background: url(../assets/Circle-progress.svg) center center no-repeat;
+				position: absolute;
+				-webkit-transform: rotateZ(240deg);
+			}
+		}
+	}
+}
+.fade{
+	-webkit-animation: fade 0.7s forwards;
+	animation: fade 0.7s forwards;
+}
+.menu-invisible{
+	-webkit-animation: hidemenu 0.7s forwards;
+	animation: hidemenu 0.7s forwards;
+}
+.menu-visible{
+	-webkit-animation: showmenu 0.7s forwards;
+	animation: showmenu 0.7s forwards;
+}
+.move{
+	-webkit-animation: move 0.7s forwards;
+	animation: move 0.7s forwards;
+}
+.moveback{
+	-webkit-animation: moveback 0.7s forwards;
+	animation: moveback 0.7s forwards;
+}
+.rotateZ{
+	-webkit-animation: rotateZ 0.7s forwards;
+	animation: rotateZ 0.7s forwards;
+}
+.rotateZback{
+	-webkit-animation: rotateZback 0.7s forwards;
+	animation: rotateZback 0.7s forwards;
+}
+
+.pausetoplay{
+	-webkit-animation: pausetoplay 0.3s forwards;
+	animation: pausetoplay 0.3s forwards;
+}
+
+.playtopause{
+	-webkit-animation: playtopause 0.3s forwards;
+	animation: playtopause 0.3s forwards;
+}
+
+

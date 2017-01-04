@@ -1,0 +1,8 @@
+{
+  "rules": {
+    ".write": "auth != null",
+    "music":{
+    	".read": true
+    }
+  }
+}
